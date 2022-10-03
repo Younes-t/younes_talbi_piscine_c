@@ -1,11 +1,12 @@
-#include <stdio.h>
 #include <stdlib.h>
 
 
 int main(){
-	for(int i=1; i<11;i++){
-		write(1,i,1);
+	char nmb='1';
+	for(int i=1; i<10;i++){
+		write(1,&nmb,1);
+		nmb=nmb+1;
 	}
-	return (0);
-}
+	write(1,"10",2);
+}	
 
