@@ -8,11 +8,6 @@ int o_strcmp(const char * first, const char * second);
 char * o_strcat( char * destination, const char * source );  
 
 int main(){
-    char* texte="yessaie";
-    char* texte2="yessaie";
-    printf("dest=%s\n",texte2);
-    o_strcat(texte2,texte);
-    printf("dest=%s",texte2);
     return (0);
 }
 
@@ -35,8 +30,10 @@ int o_strcmp(const char * first, const char * second){
 
 //concat two string
 char * o_strcat( char * destination, const char * source ){
-    for(int i=0;i<o_strlen(destination);i++){
-        destination[0]=source[0];
+    size_t t=o_strlen(destination);
+    for(int i=0;i<o_strlen(source);i++){
+        destination[t]=source[i];
+        t++;
     }
     return (destination); 
 }
