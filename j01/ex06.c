@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
-
+//
 int main(){
-    char texte[]="yessaie";
+    char texte[100];
     scanf("%[^\n]", &texte);
-    write(1,texte,strlen(texte)+1);
-
-
+    write(1,texte,strlen(texte));
     return (0);
 }
