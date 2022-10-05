@@ -8,6 +8,7 @@ int o_strcmp(const char * first, const char * second);
 char * o_strcat( char * destination, const char * source );  
 
 int main(){
+
     return (0);
 }
 
@@ -21,7 +22,7 @@ size_t o_strlen(const char * theString){
 //find the first char wich is different
 int o_strcmp(const char * first, const char * second){
     int buff;
-    for(int i=0;i<strlen(second);i++){
+    for(int i=0;i<o_strlen(second);i++){
         buff=first[i]-second[i];
         if(buff!=0){ return (buff);}
     }
