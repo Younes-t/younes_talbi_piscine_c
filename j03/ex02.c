@@ -8,6 +8,7 @@ int main(){
     int **matrix=mat2(4,4);
     //printf("%d",matrix[0][0]);
     printMat(matrix,4,4);
+    free(matrix);
     return (0);
 }
 
@@ -40,7 +41,7 @@ int **mat2(int n, int m){
 
 }
 
-
+//print a matrix (for test only)
 void printMat(int **mat, int n, int m){
     for(int l=0;l<n;l++){
         printf("\n");

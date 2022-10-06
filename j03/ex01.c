@@ -32,3 +32,4 @@ void printArr(int *arr, int t){
     }
     printf("\n");
 } 
+
