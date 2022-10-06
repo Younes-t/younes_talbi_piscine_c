@@ -6,14 +6,14 @@ char * o_strcat( char * destination, const char * source );
 size_t o_strlen(const char * theString);
 
 int main(){
-    char *chaine[]={"yess","ahahah","hihi","ok","ui","non","oui","yes","hihi"};
-    char *tab=o_strjoin(9,chaine,";\n");
+    char *chaine[]={"yess","ahahah","hihi"};
+    char *tab=o_strjoin(3,chaine,";\n");
     printf("%s",tab);
+    free(tab);
     return (0);
 }
 
 char * o_strjoin(int size,char **arr, char *sep){
-    //char buff;
     int taille=0; 
     char *res=malloc(sizeof(char *)*size);
 
