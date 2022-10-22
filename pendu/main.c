@@ -21,21 +21,19 @@ int testWord(char *tword,char *word,char *l);
 
 int main(){
     srand(time(NULL)); 
-    //char mot[100];
-    /* scanf("%s",mot);
-    printf("Votre mot : %s",mot); */
-    //printf("%s",chooseWord());
-   playTurn();
-   
-   
+    playTurn();
 }
 
+
+//CHOOSE THE WORD TO GUESS
 char* chooseWord(){
     char *listMots[8]={"Chien\0","Pomme\0","Poulpe\0","Iceberg\0","Sifflet\0","Coquelicot\0","Labyrinthe\0","Baccalauréat\0"};
     int r = rand() % 8;   
     return listMots[r];
 }
 
+
+//REPLACE LETTERS BY '_'
 char * replaceLetters(char* word){
     int taille=strlen(word);
     char *res=malloc(sizeof(char *)*taille);
@@ -52,6 +50,8 @@ char * replaceLetters(char* word){
     return res;
 }
 
+
+//CHECK IF THE WORD ENTERED BY USER IS THE WORD TO GUESS
 int isTheWord(char* word,char* tword){
     char p[20];
     printf("\n%s\n",tword);
@@ -64,7 +64,7 @@ int isTheWord(char* word,char* tword){
 }
 
 
-
+//CHECK IF THE CHAR IS A LETTER
 int checkChar(char c){
     if((c>122 || c<97) || (c>90 || c<65)){
         return 0;
@@ -72,6 +72,8 @@ int checkChar(char c){
     return 1;
 }
 
+
+//RETURN THE STR IN LOWERCASE
 char * toLower(char *word){
     int taille=strlen(word);
     char *res=malloc(sizeof(char)*taille);
@@ -82,6 +84,7 @@ char * toLower(char *word){
 
 }
 
+//RETURN THE STR IN UPPERCASE
 char * toUpper(char *word){
     int taille=strlen(word);
     char *res=malloc(sizeof(char)*taille);
@@ -94,7 +97,7 @@ char * toUpper(char *word){
 
 
 
-
+//CHECK SI LE CHAR EST BIEN DANS LE MOT
 int testWord(char *tword,char *word,char *l){
     while(1){
         printf("Essayez une lettre : ");
@@ -120,7 +123,7 @@ int testWord(char *tword,char *word,char *l){
 
 }
 
-
+//CHECK SI LE CHAR EST BIEN DANS LE MOT
 int isIn(char l,char* word, char *tword){
     int cpt=0;
     int t=strlen(word);
@@ -136,6 +139,8 @@ int isIn(char l,char* word, char *tword){
     return 0;
 }
 
+
+//MAIN FUNCTION WITH LOOP TO PLAY UNTIL THE END
 int playTurn(){
     char *word=chooseWord();
     char p[2];
@@ -174,6 +179,8 @@ int playTurn(){
     return 0;
 }
 
+
+//GET THE CHOICE EITHER ADD A LETTER OR TRY TO GUESS THE WORD
 int getChoice(char *p){
     while(1){
         printf("\n[-]Tenter d'ajouter une lettre (tapez 1)\n[-]Faire une proposition(tapez 2)\n\n");
@@ -188,6 +195,7 @@ int getChoice(char *p){
 }
 
 
+//CHECK THE STATE OF THE GAME
 int isFinished(char *word, char *tword,int lives){
     if(strcmp(word,tword)==0){
         return 1;
@@ -197,7 +205,3 @@ int isFinished(char *word, char *tword,int lives){
     return 0;
 
 }
-
-// gerer les màj dans le mot
-//sécure les input
-//décomposer en fct
